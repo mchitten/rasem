@@ -128,6 +128,7 @@ class Rasem::SVGImage
     style = fix_style(default_style.merge(style))
     @output << %Q{ font-family="#{style.delete "font-family"}"} if style["font-family"]
     @output << %Q{ font-size="#{style.delete "font-size"}"} if style["font-size"]
+    @output << %Q{ text-anchor="#{style.delete "text-anchor"}"} if style["text-anchor"]
     write_style style
     @output << ">"
     dy = 0      # First line should not be shifted
